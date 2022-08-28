@@ -51,13 +51,13 @@ select ename,sal from EMP where sal>1000
 --3. Display the names and salaries of all employees except JAMES. 
 select ename,sal from EMP where ename!='JAMES'
 
---4. Find out the details of employees whose names begin with ‘S’. 
+--4. Find out the details of employees whose names begin with â€˜Sâ€™. 
 select * from EMP where ename like 'S%';
 
---5. Find out the names of all employees that have ‘A’ anywhere in their name. 
+--5. Find out the names of all employees that have â€˜Aâ€™ anywhere in their name. 
 select ename from EMP where ename like '%A%'
 
---6. Find out the names of all employees that have ‘L’ as their third character in their name. 
+--6. Find out the names of all employees that have â€˜Lâ€™ as their third character in their name. 
 select ename from EMP where ename like '__L%'
 
 --7. Compute daily salary of JONES. 
@@ -88,8 +88,10 @@ select ename,sal,comm from EMP where comm>(sal+sal*0.10)
 --15. Display the name of all employees who have two Ls in their name and are in department 30 or their manager is 7782. 
 select ename from EMP where ename
 
-16. Display the names of employees with experience of over 10 years and under 20 yrs.
+--16. Display the names of employees with experience of over 10 years and under 20 yrs.
  Count the total number of employees. 
-17. Retrieve the names of departments in ascending order and their employees in 
+ 
+--17. Retrieve the names of departments in ascending order and their employees in 
 descending order. 
-18. Find out experience of MILLER. 
+--18. Find out experience of MILLER. 
+select ename, convert(varchar(4), DATEDIFF(month, hiredate, GETDATE())/12) AS Experience FROM EMP where ename='MILLER';
