@@ -90,8 +90,12 @@ select ename from EMP where ename
 
 --16. Display the names of employees with experience of over 10 years and under 20 yrs.
  Count the total number of employees. 
- 
+ select count(empno) as 'No.of.Employees', convert(varchar(4), DATEDIFF(month, hiredate, GETDATE())/12)>10 or convert(varchar(4), DATEDIFF(month, hiredate, GETDATE())/12)<20 AS Experience FROM EMP ;
+
 --17. Retrieve the names of departments in ascending order and their employees in 
 descending order. 
+select dname,ename from EMP join DEPT on EMP.deptno=DEPT.deptno order by dname asc,ename desc;
+ 
+
 --18. Find out experience of MILLER. 
 select ename, convert(varchar(4), DATEDIFF(month, hiredate, GETDATE())/12) AS Experience FROM EMP where ename='MILLER';
