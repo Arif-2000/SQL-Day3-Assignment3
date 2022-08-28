@@ -86,7 +86,7 @@ select ename,job,sal from EMP where (job='MANAGER' or job='ANALYST') and (sal!=1
 select ename,sal,comm from EMP where comm>(sal+sal*0.10)
 
 --15. Display the name of all employees who have two Ls in their name and are in department 30 or their manager is 7782. 
-select ename from EMP where ename
+select ename from EMP where ename like '%Ls%' and deptno=30 or mgr_id=7782
 
 --16. Display the names of employees with experience of over 10 years and under 20 yrs.Count the total number of employees. 
  select count(empno) as 'No.of.Employees', convert(varchar(4), DATEDIFF(month, hiredate, GETDATE())/12)>10 or convert(varchar(4), DATEDIFF(month, hiredate, GETDATE())/12)<20 AS Experience FROM EMP ;
